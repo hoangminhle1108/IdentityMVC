@@ -1,0 +1,39 @@
+﻿@page
+@model IdentityCus_Temp.Pages.Categories.EditModel
+
+<form method="Post">
+    <input asp-for="cate.Id" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary"> Edit Category </h2>
+        </div>
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="mb-3 row p-1">
+            <label asp-for="cate.Name" class="p-0"></label>
+            <input asp-for="cate.Name" class="form-control" />
+            <span asp-validation-for="cate.Name" class="text-bg-danger"></span>
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="cate.DisplayOrder" class="p-0"></label>
+            <input asp-for="cate.DisplayOrder" class="form-control" />
+            <span asp-validation-for="cate.DisplayOrder" class="text-bg-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col-6 ">
+                <button type="submit" class="btn btn-primary form-control">Update</button>
+            </div>
+            <div class="col-6 ">
+                <a asp-page="/categories/index" class="btn btn-secondary form-control">
+                    Back To List
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+</form>
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

@@ -1,0 +1,92 @@
+﻿@page
+@model IdentityCus_Temp.Pages.Categories.IndexModel
+
+<div class="container">
+    <div class="row pt-4 pb-3">
+        <div class="col-6">
+            <h2 class="text-primary">Category List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-page="/categories/create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> Create new category
+            </a>
+        </div>
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Category Name</th>
+                <th>Display Order</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var o in Model.cateList.OrderBy(u => u.DisplayOrder))
+            {
+                <tr>
+                    <td>@o.Name</td>
+                    <td>@o.DisplayOrder</td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-page="/Categories/Edit" asp-route-id="@o.Id" class="btn btn-primary mx-2">
+                                <i class="bi bi-pencil-square"></i> Edit
+                            </a>
+                            <a asp-page="/Categories/Delete" asp-route-id="@o.Id" class="btn btn-danger mx-2">
+                                <i class="bi bi-trash-fill"></i> Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@* @page
+@model IdentityCus_Temp.Pages.Categories.IndexModel
+
+<div class="container">
+    <div class="row pt-4 pb-3">
+        <div class="col-6">
+            <h2 class="text-primary">
+                Category List
+            </h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-page="/Categories/Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> Create new category
+            </a>
+        </div>
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Category Name
+                </th>
+                <th>
+                    Display Order
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var o in Model.cateList.OrderBy(u => u.DisplayOrder))
+            {
+                <tr>
+                    <td>@o.Name</td>
+                    <td>@o.DisplayOrder</td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-page="/categories/edit" asp-route-Id="@o.Id" class="btn btn-primary mx-2">
+                                <i class="bi bi-pencil-square"></i> Edit
+                            </a>
+                            <a asp-page="/categories/delete" asp-route-Id="@o.Id" class="btn btn-danger mx-2">
+                                <i class="bi bi-trash-fill"></i> Delete
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+</div> *@
